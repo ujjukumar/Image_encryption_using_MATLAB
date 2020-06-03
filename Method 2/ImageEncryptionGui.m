@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function varargout = ImageEncryptionGui(varargin)
-
+tic
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
@@ -87,4 +87,5 @@ imshow(uint8(Dec_Img));
 imwrite(uint8(Dec_Img), 'Decrypted.jpg', 'Quality', 100);
 
 Plotting_Images(gray_image, uint8(Enc_Img), uint8(Dec_Img))
+toc
 guidata(hObject, handles);

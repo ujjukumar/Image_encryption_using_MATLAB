@@ -1,5 +1,5 @@
 function varargout = ImageEncryptionGui(varargin)
-
+tic
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
@@ -74,4 +74,5 @@ imshow(DecImg);
 imwrite(DecImg,'Decoded.jpg', 'Quality', 100);
 disp('Pixel Error of Original Image with Decrypted Image: ');
 disp(NpcrColorImages(Img, DecImg));
+toc
 guidata(hObject, handles);
